@@ -15,8 +15,8 @@ import {
   // AppCurrentVisits,
   // AppWebsiteVisits,
   AppTrafficBySite,
-  AppCurrentSubject,
-  AppConversionRates
+  AppCurrentSubject
+  // AppConversionRates
 } from '../components/_dashboard/app';
 
 // ----------------------------------------------------------------------
@@ -66,11 +66,11 @@ export default function DashboardApp() {
             <AppOrderTimeline />
           </Grid>
 
-          <Grid item xs={12} md={6} lg={8}>
-            <AppTasks />
-          </Grid>
           <Grid item xs={12} md={6} lg={4}>
             <AppTrafficBySite />
+          </Grid>
+          <Grid item xs={12} md={6} lg={6}>
+            <AppTasks />
           </Grid>
         </Grid>
       </Container>
