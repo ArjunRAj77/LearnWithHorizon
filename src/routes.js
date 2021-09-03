@@ -12,6 +12,7 @@ import User from './pages/User';
 import NotFound from './pages/Page404';
 import Digilibrary from './pages/Digilibrary';
 import NoticeBoard from './pages/NoticeBoard';
+import AboutUs from './pages/AboutUs';
 
 // ----------------------------------------------------------------------
 
@@ -38,7 +39,8 @@ export default function Router() {
         { path: 'products', element: <Products /> },
         { path: 'blog', element: <Blog /> },
         { path: 'Digilibrary', element: <Digilibrary /> },
-        { path: 'NoticeBoard', element: <NoticeBoard /> }
+        { path: 'NoticeBoard', element: <NoticeBoard /> },
+        { path: 'AboutUs', element: <AboutUs /> }
       ]
     },
 

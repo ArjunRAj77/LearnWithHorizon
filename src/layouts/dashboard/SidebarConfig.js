@@ -3,7 +3,7 @@ import pieChart2Fill from '@iconify/icons-eva/pie-chart-2-fill';
 import peopleFill from '@iconify/icons-eva/people-fill';
 import shoppingBagFill from '@iconify/icons-eva/shopping-bag-fill';
 import fileTextFill from '@iconify/icons-eva/file-text-fill';
-// import lockFill from '@iconify/icons-eva/lock-fill';
+import lockFill from '@iconify/icons-eva/lock-fill';
 // import personAddFill from '@iconify/icons-eva/person-add-fill';
 import alertTriangleFill from '@iconify/icons-eva/alert-triangle-fill';
 
@@ -42,6 +42,16 @@ const sidebarConfig = [
   //   path: '/register',
   //   icon: getIcon(personAddFill)
   // },
+  {
+    title: 'Notice board',
+    path: '/dashboard/NoticeBoard',
+    icon: getIcon(lockFill)
+  },
+  {
+    title: 'About Us',
+    path: '/dashboard/AboutUs',
+    icon: getIcon(lockFill)
+  },
   {
     title: 'Not found',
     path: '/404',
