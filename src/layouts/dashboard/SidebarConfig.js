@@ -1,11 +1,14 @@
 import { Icon } from '@iconify/react';
 import pieChart2Fill from '@iconify/icons-eva/pie-chart-2-fill';
 import peopleFill from '@iconify/icons-eva/people-fill';
-import shoppingBagFill from '@iconify/icons-eva/shopping-bag-fill';
+// import shoppingBagFill from '@iconify/icons-eva/shopping-bag-fill';
 import fileTextFill from '@iconify/icons-eva/file-text-fill';
-import lockFill from '@iconify/icons-eva/lock-fill';
+// import lockFill from '@iconify/icons-eva/lock-fill';
 // import personAddFill from '@iconify/icons-eva/person-add-fill';
 import alertTriangleFill from '@iconify/icons-eva/alert-triangle-fill';
+import book from '@iconify/icons-eva/book-open-outline';
+import phonecall from '@iconify/icons-eva/phone-call-fill';
+import mail from '@iconify/icons-eva/email-outline';
 
 // ----------------------------------------------------------------------
 
@@ -22,21 +25,21 @@ const sidebarConfig = [
     path: '/dashboard/user',
     icon: getIcon(peopleFill)
   },
-  {
-    title: 'product',
-    path: '/dashboard/products',
-    icon: getIcon(shoppingBagFill)
-  },
+  // {
+  //   title: 'product',
+  //   path: '/dashboard/products',
+  //   icon: getIcon(shoppingBagFill)
+  // },
   {
     title: 'School Blogs',
     path: '/dashboard/blog',
     icon: getIcon(fileTextFill)
   },
-  // {
-  //   title: 'Digilibrary',
-  //   path: '/dashboard/digilibrary',
-  //   icon: getIcon(lockFill)
-  // },
+  {
+    title: 'Digi-Library',
+    path: '/dashboard/digilibrary',
+    icon: getIcon(book)
+  },
   // {
   //   title: 'register',
   //   path: '/register',
@@ -45,12 +48,12 @@ const sidebarConfig = [
   {
     title: 'Notice board',
     path: '/dashboard/NoticeBoard',
-    icon: getIcon(lockFill)
+    icon: getIcon(mail)
   },
   {
     title: 'About Us',
     path: '/dashboard/AboutUs',
-    icon: getIcon(lockFill)
+    icon: getIcon(phonecall)
   },
   {
     title: 'Not found',
