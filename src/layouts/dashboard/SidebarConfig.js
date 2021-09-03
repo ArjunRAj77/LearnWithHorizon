@@ -28,7 +28,7 @@ const sidebarConfig = [
     icon: getIcon(shoppingBagFill)
   },
   {
-    title: 'blog',
+    title: 'School Blogs',
     path: '/dashboard/blog',
     icon: getIcon(fileTextFill)
   },
