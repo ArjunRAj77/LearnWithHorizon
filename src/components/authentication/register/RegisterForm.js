@@ -1,13 +1,14 @@
 import * as Yup from 'yup';
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
-import { useFormik, Form, FormikProvider } from 'formik';
+import { useFormik, Form, FormikProvider, useField } from 'formik';
 import eyeFill from '@iconify/icons-eva/eye-fill';
 import eyeOffFill from '@iconify/icons-eva/eye-off-fill';
 import { useNavigate } from 'react-router-dom';
 // material
 import { Stack, TextField, IconButton, InputAdornment } from '@material-ui/core';
 import { LoadingButton } from '@material-ui/lab';
+// import {DropDown,OptionGroup,Option} from 'react-form-elements';
 
 // ----------------------------------------------------------------------
 
@@ -30,7 +31,8 @@ export default function RegisterForm() {
       firstName: '',
       lastName: '',
       email: '',
-      password: ''
+      password: '',
+      AccountType: ''
     },
     validationSchema: RegisterSchema,
     onSubmit: () => {
@@ -38,8 +40,18 @@ export default function RegisterForm() {
     }
   });
 
-  const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = formik;
+  const MySelect = ({ label, ...props }) => {
+    const [field, meta] = useField(props);
+    return (
+      <div>
+        <label htmlFor={props.id || props.name}>{label}</label>
+        <select {...field} {...props} />
+        {meta.touched && meta.error ? <div className="error">{meta.error}</div> : null}
+      </div>
+    );
+  };
 
+  const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = formik;
   return (
     <FormikProvider value={formik}>
       <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
@@ -90,7 +102,11 @@ export default function RegisterForm() {
             error={Boolean(touched.password && errors.password)}
             helperText={touched.password && errors.password}
           />
-
+          <MySelect label="Account Type : " name="AccountType">
+            {/* <option value="">Select your account type</option> */}
+            <option value="Student">Student</option>
+            <option value="Teacher">Teacher</option>
+          </MySelect>
           <LoadingButton
             fullWidth
             size="large"
