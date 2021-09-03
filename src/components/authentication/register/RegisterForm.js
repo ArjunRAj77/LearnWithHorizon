@@ -6,7 +6,14 @@ import eyeFill from '@iconify/icons-eva/eye-fill';
 import eyeOffFill from '@iconify/icons-eva/eye-off-fill';
 import { useNavigate } from 'react-router-dom';
 // material
-import { Stack, TextField, IconButton, InputAdornment } from '@material-ui/core';
+import {
+  Stack,
+  TextField,
+  IconButton,
+  InputAdornment,
+  FormControlLabel,
+  Checkbox
+} from '@material-ui/core';
 import { LoadingButton } from '@material-ui/lab';
 // import {DropDown,OptionGroup,Option} from 'react-form-elements';
 
@@ -51,7 +58,7 @@ export default function RegisterForm() {
     );
   };
 
-  const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = formik;
+  const { errors, touched, handleSubmit, values, isSubmitting, getFieldProps } = formik;
   return (
     <FormikProvider value={formik}>
       <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
@@ -102,11 +109,21 @@ export default function RegisterForm() {
             error={Boolean(touched.password && errors.password)}
             helperText={touched.password && errors.password}
           />
-          <MySelect label="Account Type : " name="AccountType">
-            {/* <option value="">Select your account type</option> */}
-            <option value="Student">Student</option>
-            <option value="Teacher">Teacher</option>
-          </MySelect>
+          <Stack direction="row" alignItems="center" sx={{ my: 2 }}>
+            <MySelect label="Account Type : " name="AccountType">
+              {/* <option value="">Select your account type</option> */}
+              <option value="Student">Student</option>
+              <option value="Teacher">Teacher</option>
+            </MySelect>
+          </Stack>
+
+          <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 2 }}>
+            <FormControlLabel
+              control={<Checkbox {...getFieldProps('remember')} checked={values.remember} />}
+              label="Accept Terms and Conditions"
+            />
+          </Stack>
+
           <LoadingButton
             fullWidth
             size="large"
